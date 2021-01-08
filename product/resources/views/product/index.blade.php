@@ -24,7 +24,7 @@
             <tr>
                 <td>shit</td>
                 <td>3424765</td>
-                <td>yugyugyugygfygyhgyggit</td>
+                <td>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo numquam dolor dolorem obcaecati reprehenderit unde nulla aspernatur, veritatis, eveniet, adipisci qui neque laborum? Repellat assumenda nihil eveniet maiores. Aperiam, vel?</td>
                 <td></td>
                 <td>
                     <form action="" method="POST">
