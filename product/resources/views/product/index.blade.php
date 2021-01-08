@@ -22,11 +22,14 @@
         </tr>
 
             <tr>
-                <td>shit</td>
-                <td>3424765</td>
-                <td>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo numquam dolor dolorem obcaecati reprehenderit unde nulla aspernatur, veritatis, eveniet, adipisci qui neque laborum? Repellat assumenda nihil eveniet maiores. Aperiam, vel?</td>
+            @foreach ($products as $product)
+                <td>{{$product->product_name}}</td>
+                <td>{{$product->product_code}}</td>
+                <td>{{$product->details}}</td>
                 <td></td>
-                <td>
+
+
+                
                     <form action="" method="POST">
 
                         <a href="" title="show">
@@ -43,6 +46,7 @@
                       
                     </form>
                 </td>
+                @endforeach
             </tr>
     
     </table>
