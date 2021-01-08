@@ -15,4 +15,10 @@ $products = DB::table('products')->get();
 
     return view('product.index',compact('products'));
   }
+
+  public function create() {
+    
+    return view('product.create',);
+  }
+
 }

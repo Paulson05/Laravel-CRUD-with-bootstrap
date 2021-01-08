@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('main');
 });
 Route::get('/product/index', [App\Http\Controllers\ProductController::class, 'index'])->name('index');
-
+Route::get('/product/create', [App\Http\Controllers\ProductController::class, 'create'])->name('create');
 
 Auth::routes();
 
