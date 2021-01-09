@@ -47,4 +47,11 @@ $products = DB::table('products')->get();
   }
 
 
+  public function edit($id)
+    {
+      $product = DB::table('products')->where('id', $id)->first();
+      return view('product.edit',compact('product'));
+    }
+
+
 }
