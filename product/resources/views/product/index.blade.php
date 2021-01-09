@@ -12,6 +12,11 @@
                     </a>
             </div>
         </div>
+        @if($message = Session::get ('success'))
+        <div class = "alert alert-success">
+        <p>{{$message }}</p>
+        </div>
+        @endif
         <table class="table table-bordered table-responsive-lg">
         <tr>
             <th>Product name</th>
@@ -20,17 +25,17 @@
             <th>Product logo</th>
             <th>Actions</th>
         </tr>
-
+        @foreach ($products as $product)
             <tr>
-            @foreach ($products as $product)
+           
                 <td>{{$product->product_name}}</td>
                 <td>{{$product->product_code}}</td>
                 <td>{{$product->details}}</td>
                 <td></td>
 
 
-                
-                    <form action="" method="POST">
+                <td>
+        
 
                         <a href="" title="show">
                             <i class="btn btn-danger">SHOW</i>
@@ -43,12 +48,11 @@
                             <i class="btn btn-info">DELETE</i>
                         </a>
 
-                      
-                    </form>
-                </td>
-                @endforeach
-            </tr>
     
+                </td>
+               
+            </tr>
+     @endforeach
     </table>
 
 

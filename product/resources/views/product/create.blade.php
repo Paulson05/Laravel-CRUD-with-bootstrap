@@ -15,7 +15,7 @@
        
 
     </div>
-    <form action="" method="POST" enctype= "multipart/form-data" >
+    <form action="/product/store" method="POST" enctype= "multipart/form-data" >
         @csrf
 
         <div class="row">
@@ -42,7 +42,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>product code</strong>
-                    <input type="file" name="logo" >
+                    <input type="file" name="logo">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
