@@ -34,7 +34,7 @@ $products = DB::table('products')->get();
       $image_name= date('dmy_H_s_i');
             $ext = strtolower($image->getClientOriginalExtension());
            $image_full_name= $image_name. '.' .$ext;
-           $upload_path ='public/media/';
+           $upload_path ='/public/media';
            $image_url = $upload_path.$image_full_name;
            $success = $image->move($upload_path.$image_full_name);
          
@@ -51,6 +51,35 @@ $products = DB::table('products')->get();
     {
       $product = DB::table('products')->where('id', $id)->first();
       return view('product.edit',compact('product'));
+    }
+
+
+    
+    public function update(Request $request, $id)
+    {
+   $oldlogo = $request->old_logo;
+
+      $data = array();
+      $data['product_name'] = $request->product_name;
+      $data['product_code'] = $request->product_code;
+      $data['details'] = $request->details;
+  
+      $image = $request->file('logo');
+      if($image){
+        unlink($oldlogo);
+        $image_name= date('dmy_H_s_i');
+              $ext = strtolower($image->getClientOriginalExtension());
+             $image_full_name= $image_name. '.' .$ext;
+             $upload_path ='/public/media';
+             $image_url = $upload_path.$image_full_name;
+             $success = $image->move($upload_path.$image_full_name);
+           
+             $data['logo'] = $image_url;
+  
+              $product = DB::table('products')->where('id, $id')->update($data);
+              return redirect('/product/index')->with('success', 'product updated sucessfull');
+          
+      }
     }
 
 

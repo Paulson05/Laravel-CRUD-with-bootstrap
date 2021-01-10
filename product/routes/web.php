@@ -20,7 +20,7 @@ Route::get('/product/index', [App\Http\Controllers\ProductController::class, 'in
 Route::get('/product/create', [App\Http\Controllers\ProductController::class, 'create'])->name('create');
 Route::post('/product/store', [App\Http\Controllers\ProductController::class, 'store'])->name('store');
 Route::get('edit/product/{id}', [App\Http\Controllers\ProductController::class, 'edit'])->name('edit');
-
+Route::post('update/product/{id}', [App\Http\Controllers\ProductController::class, 'update'])->name('update');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
