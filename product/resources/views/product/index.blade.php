@@ -31,7 +31,7 @@
                 <td>{{$product->product_name}}</td>
                 <td>{{$product->product_code}}</td>
                 <td>{{$product->details}}</td>
-                <td><img  src = "{{URL::to($product->logo)}}" height= "70px;" width = "80px;"></td>
+                <td><img  src = "{{url("{$product->logo}")}}" height= "70px;" width = "80px;"></td>
 
 
                 <td>

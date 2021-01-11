@@ -31,19 +31,21 @@ $products = DB::table('products')->get();
 
     $image = $request->file('logo');
     if($image){
-      $image_name= date('dmy_H_s_i');
+      $image_name= rand(100000,9999999);
             $ext = strtolower($image->getClientOriginalExtension());
            $image_full_name= $image_name. '.' .$ext;
-           $upload_path ='/public/media';
-           $image_url = $upload_path.$image_full_name;
-           $success = $image->move($upload_path.$image_full_name);
+           $upload_path ='media';
+           $image_url = $upload_path."/".$image_full_name;
+           
+           $success = $image->move($upload_path,$image_full_name);
          
            $data['logo'] = $image_url;
 
             $product = DB::table('products')->insert($data);
+            
+      return redirect('/product/index')->with('success', 'product created sucessfull');
     }
 
-    return redirect('/product/index')->with('success', 'product created sucessfull');
   }
 
 
@@ -67,16 +69,19 @@ $products = DB::table('products')->get();
       $image = $request->file('logo');
       if($image){
         unlink($oldlogo);
-        $image_name= date('dmy_H_s_i');
-              $ext = strtolower($image->getClientOriginalExtension());
-             $image_full_name= $image_name. '.' .$ext;
-             $upload_path ='/public/media';
-             $image_url = $upload_path.$image_full_name;
-             $success = $image->move($upload_path.$image_full_name);
+        $image_name= rand(100000,9999999);
+            $ext = strtolower($image->getClientOriginalExtension());
+           $image_full_name= $image_name. '.' .$ext;
+           $upload_path ='media';
+           $image_url = $upload_path."/".$image_full_name;
            
-             $data['logo'] = $image_url;
-  
-              $product = DB::table('products')->where('id, $id')->update($data);
+           $success = $image->move($upload_path,$image_full_name);
+         
+           $data['logo'] = $image_url;
+
+         
+            
+              $product = DB::table('products')->where('id', $id)->update($data);
               return redirect('/product/index')->with('success', 'product updated sucessfull');
           
       }
