@@ -87,5 +87,22 @@ $products = DB::table('products')->get();
       }
     }
 
+    public function delete($id)
+        {
+      $data = DB::table('products')->where('id', $id)->first();
+      $image = $data->logo;
+      unlink($image);
+      $product=DB::table('products')->where('id', $id)->delete();
+      return redirect('/product/index')->with('success', 'product deleted sucessfull');
+          
+    }
 
+    
+    public function show($id)
+        {
+      $data = DB::table('products')->where('id', $id)->first();
+      
+      return view('product.show',compact('data'));
+          
+    }
 }

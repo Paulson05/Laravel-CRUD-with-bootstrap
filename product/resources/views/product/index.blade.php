@@ -37,15 +37,15 @@
                 <td>
         
 
-                        <a href="" title="show">
+                        <a href="{{URL::to('show/product/'.$product->id)}}" title="show">
                             <i class="btn btn-danger">SHOW</i>
                         </a>
 
                         <a href="{{URL::to('edit/product/'.$product->id)}}">
                             <i class="btn btn-primary">EDIT</i>
                         </a>
-                        <a href="">
-                            <i class="btn btn-info">DELETE</i>
+                        <a href="{{URL::to('delete/product/'.$product->id)}}">
+                            <i class="btn btn-info" onclick="return confirm('are you sure')">DELETE</i>
                         </a>
 
     
