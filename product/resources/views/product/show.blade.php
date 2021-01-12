@@ -5,10 +5,10 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>show  Product </h2>
+                <h2>Show  Products </h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-success" href="/product/index" title="Create a product"> Back<i class="fas fa-plus-circle"></i>
+                <a class="btn btn-success" href="/product/index" title="Create a product">Go Back<i class="fas fa-plus-circle"></i>
                     </a>
             </div>
         </div>
