@@ -9,7 +9,7 @@
             </div>
             <div class="pull-right">
                 <a class="btn btn-success" href="/product/index" title="Create a product">Go Back<i class="fas fa-plus-circle"></i>
-                    </a>
+                    </a> 
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
